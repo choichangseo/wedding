@@ -25,49 +25,59 @@ export default function Home() {
       <div>
         <h1 className="font-ice font-bold text-3xl">LOCATION</h1>
         <KaKaoMap />
-        {isMobile ? (
-          <>
-            {" "}
-            <a href="kakaomap://look?p=37.481940,126.7984955">카카오 지도</a>
-            <a
-              href={`nmap://search?query=${encodeURIComponent(
-                "MJ컨벤션"
-              )}&appname=https://wedding-snowy-chi.vercel.app/`}
-            >
-              네이버 지도
-            </a>
-          </>
-        ) : (
-          <>
-            <a href="https://map.kakao.com/link/map/37.481940,126.7984955">
-              카카오 지도
-            </a>
-            <a href="https://map.naver.com/p/search/MJ%20%EC%BB%A8%EB%B2%A4%EC%85%98?c=15.00,0,0,0,dh">
-              네이버 지도
-            </a>
-          </>
-        )}
       </div>
       <div>
         <h1 className="font-ice font-bold text-3xl">MJ 컨벤션</h1>
         <div>경기도 부천시 소사구 소사본동 65-7</div>
         <div>Tel. 032-347-5500</div>
+        {isMobile ? (
+          <div className="flex flex-row text-xs mt-5">
+            <a
+              className="flex flex-col justify-center items-center w-15 text-center gap-2"
+              href="kakaomap://look?p=37.481940,126.7984955"
+            >
+              <img src="/kakao_map.png" />
+              <div>카카오맵</div>
+            </a>
+            <a
+              className="flex flex-col justify-center items-center w-15 text-center gap-2"
+              href={`nmap://search?query=${encodeURIComponent(
+                "MJ컨벤션"
+              )}&appname=https://wedding-snowy-chi.vercel.app/`}
+            >
+              <img src="/naver_map.png" />
+              <div>네이버지도</div>
+            </a>
+            <a
+              className="flex flex-col justify-center items-center w-15 text-center gap-2"
+              href="tmap://search?name=MJ컨벤션"
+            >
+              <img className="w-10" src="/t_map.png" />
+            </a>
+          </div>
+        ) : (
+          <div className="flex  flex-row gap-10 text-xs mt-5">
+            <a
+              className="flex flex-col justify-center items-center w-15 text-center gap-2"
+              href="https://map.kakao.com/link/map/37.481940,126.7984955"
+            >
+              <img className="w-10" src="/kakao_map.png" />
+              <div>카카오맵</div>
+            </a>
+            <a
+              className="flex flex-col justify-center items-center w-15 text-center gap-2"
+              href="https://map.naver.com/p/search/MJ%20%EC%BB%A8%EB%B2%A4%EC%85%98?c=15.00,0,0,0,dh"
+            >
+              <img className="w-10" src="/naver_map.png" />
+              <div>네이버지도</div>
+            </a>
+          </div>
+        )}
       </div>
       <div>
         <h1 className="font-ice font-bold text-3xl">대중교통</h1>
         <div>경기도 부천시 소사구 소사본동 65-7</div>
         <div>Tel. 032-347-5500</div>
-      </div>
-      <div>
-        <h1 className="font-ice font-bold text-3xl">자가용</h1>
-        <div>
-          네비게이션 이용 시 "부천 MJ 컨벤션"을 입력하세요. (주차 2시간 무료)
-        </div>
-        <a className="flex-1" href="tmap://search?name=MJ컨벤션">
-          <button className="w-full nes-btn text-ellipsis">티맵</button>
-        </a>
-        <div>KAKAO-MAP</div>
-        <div>NAVER-MAP</div>
       </div>
       <div className="flex flex-col align-middle justify-center p-8  gap-2 text-center w-full bg-my-yellow">
         <h1 className="font-ice font-bold mb-8 text-3xl">마음 전하실 곳</h1>
