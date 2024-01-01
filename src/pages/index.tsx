@@ -1,3 +1,4 @@
+import { isMobile } from "react-device-detect";
 import KaKaoMap from "./component/kakaoMap";
 
 export default function Home() {
@@ -24,12 +25,28 @@ export default function Home() {
       <div>
         <h1 className="font-ice font-bold text-3xl">LOCATION</h1>
         <KaKaoMap />
-        <a href="https://map.kakao.com/link/map/37.402056,127.108212">
-          카카오 지도
-        </a>
-        <a href="nmap://map?lat=37.402056&lng=127.108212&zoom=20&appname=http://localhost:3000">
-          네이버 지도
-        </a>
+        {isMobile ? (
+          <>
+            {" "}
+            <a href="kakaomap://look?p=37.481940,126.7984955">카카오 지도</a>
+            <a
+              href={`nmap://search?query=${encodeURIComponent(
+                "MJ컨벤션"
+              )}&appname=https://wedding-snowy-chi.vercel.app/`}
+            >
+              네이버 지도
+            </a>
+          </>
+        ) : (
+          <>
+            <a href="https://map.kakao.com/link/map/37.481940,126.7984955">
+              카카오 지도
+            </a>
+            <a href="https://map.naver.com/p/search/MJ%20%EC%BB%A8%EB%B2%A4%EC%85%98?c=15.00,0,0,0,dh">
+              네이버 지도
+            </a>
+          </>
+        )}
       </div>
       <div>
         <h1 className="font-ice font-bold text-3xl">MJ 컨벤션</h1>
@@ -58,7 +75,6 @@ export default function Home() {
           신랑 측 계좌번호
         </div>
         <div className="w-full py-2 rounded-l bg-white cursor-pointer">
-          {" "}
           신부 측 계좌번호
         </div>
       </div>
