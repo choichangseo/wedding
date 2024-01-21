@@ -29,18 +29,16 @@ const ImageList = styled.div`
   height: 500px;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 10px;
-  grid-auto-flow: column;
   transition: 2s ease-in-out;
 `;
 const Images = styled.div`
   display: grid;
   row-gap: 10px;
   width: 100%;
-  height: auto;
+  height: max-content;
 `;
 const Image = styled.img`
   width: 100%;
-  height: auto;
   cursor: pointer;
   /* 처음에는 이미지를 50% 크기로 설정 */
   animation: ${ImageKeyframes} 0.5s ease; /* 0.5초 동안 부드럽게 원래 크기로 변환 */
