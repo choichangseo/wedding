@@ -26,7 +26,7 @@ const ImageKeyframes = keyframes`
 const ImageList = styled.div`
   display: grid;
   overflow-y: scroll;
-  height: 700px;
+  height: 500px;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 10px;
   grid-auto-flow: column;
@@ -107,7 +107,7 @@ export default function ImageSlider() {
   };
 
   return (
-    <LazyLoad height={700}>
+    <LazyLoad>
       <ImageList>
         <Images>
           <Image
