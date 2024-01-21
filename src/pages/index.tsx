@@ -1,8 +1,8 @@
 // import Device from "./component/isMobile/Device";
+import ImageSlider from "@/component/imageSlider";
+import KaKaoMap from "@/component/kakaoMap";
 import { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
-import ImageSlider from "./component/imageSlider";
-import KaKaoMap from "./component/kakaoMap";
 
 export default function Home() {
   const [mounted, setMounted] = useState<boolean>(false);
