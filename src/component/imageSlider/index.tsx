@@ -40,7 +40,7 @@ const Images = styled.div`
 `;
 const Image = styled.img`
   width: 100%;
-  height: 100%;
+  height: auto;
   cursor: pointer;
   /* 처음에는 이미지를 50% 크기로 설정 */
   animation: ${ImageKeyframes} 0.5s ease; /* 0.5초 동안 부드럽게 원래 크기로 변환 */
