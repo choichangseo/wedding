@@ -1,4 +1,4 @@
-import { breakPoints } from "@/pages/common/mediaQuery/media";
+import { breakPoints } from "@/common/mediaQuery/media";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { MouseEvent, useRef, useState } from "react";
