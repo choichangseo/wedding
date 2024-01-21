@@ -1,14 +1,22 @@
+// import Device from "./component/isMobile/Device";
+import { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
+import ImageSlider from "./component/imageSlider";
 import KaKaoMap from "./component/kakaoMap";
 
 export default function Home() {
+  const [mounted, setMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <main className="flex flex-col w-full gap-10">
       <img src="/wedding1.jpeg" />
       <div className="flex flex-col text-center w-full">
         <h1 className="font-ice font-bold text-3xl">결혼식에 초대합니다</h1>
         장진하 & 김지원
-        <div>2023. 00. 0 토요일 오전 11시 MJ 웨딩홀</div>
+        <div>2024. 06. 29 토요일 오후 5시 라비에벨 웨딩홀</div>
       </div>
       <div className="flex flex-col justify-center p-8 text-center w-full bg-my-yellow text-sm">
         <h1 className="font-ice font-bold text-3xl mb-5">INVITATION</h1>
@@ -21,52 +29,55 @@ export default function Home() {
       </div>
       <div>
         <h1 className="font-ice font-bold text-3xl">GALLERY</h1>
+        <ImageSlider />
       </div>
       <div>
         <h1 className="font-ice font-bold text-3xl">LOCATION</h1>
         <KaKaoMap />
       </div>
       <div>
-        <h1 className="font-ice font-bold text-3xl">MJ 컨벤션</h1>
-        <div>경기도 부천시 소사구 소사본동 65-7</div>
-        <div>Tel. 032-347-5500</div>
-        {isMobile ? (
-          <div className="flex flex-row text-xs mt-5">
+        <h1 className="font-ice font-bold text-3xl">라비에벨 컨벤션</h1>
+        <div>경기도 부천시 원미구 길주로 105 세이브존 9층</div>
+        <div>Tel. 032-325-2000</div>
+        {mounted && isMobile ? (
+          <div className="flex flex-row text-xs mt-5 gap-5">
             <a
               className="flex flex-col justify-center items-center w-15 text-center gap-2"
-              href="kakaomap://look?p=37.481940,126.7984955"
-            >
-              <img src="/kakao_map.png" />
-              <div>카카오맵</div>
-            </a>
-            <a
-              className="flex flex-col justify-center items-center w-15 text-center gap-2"
-              href={`nmap://search?query=${encodeURIComponent(
-                "MJ컨벤션"
-              )}&appname=https://wedding-snowy-chi.vercel.app/`}
-            >
-              <img src="/naver_map.png" />
-              <div>네이버지도</div>
-            </a>
-            <a
-              className="flex flex-col justify-center items-center w-15 text-center gap-2"
-              href="tmap://search?name=MJ컨벤션"
-            >
-              <img className="w-10" src="/t_map.png" />
-            </a>
-          </div>
-        ) : (
-          <div className="flex  flex-row gap-10 text-xs mt-5">
-            <a
-              className="flex flex-col justify-center items-center w-15 text-center gap-2"
-              href="https://map.kakao.com/link/map/37.481940,126.7984955"
+              href="kakaomap://look?p=37.5064069,126.7538282"
             >
               <img className="w-10" src="/kakao_map.png" />
               <div>카카오맵</div>
             </a>
             <a
               className="flex flex-col justify-center items-center w-15 text-center gap-2"
-              href="https://map.naver.com/p/search/MJ%20%EC%BB%A8%EB%B2%A4%EC%85%98?c=15.00,0,0,0,dh"
+              href={`nmap://search?query=${encodeURIComponent(
+                "라비에벨 컨벤션"
+              )}&appname=https://wedding-snowy-chi.vercel.app/`}
+            >
+              <img className="w-10" src="/naver_map.png" />
+              <div>네이버지도</div>
+            </a>
+            <a
+              className="flex flex-col justify-center items-center w-15 text-center gap-2"
+              href="tmap://search?name=라비에벨 컨벤션"
+            >
+              <img className="w-10" src="/t_map.png" />
+              <div>T-MAP</div>
+            </a>
+          </div>
+        ) : (
+          <div className="flex  flex-row gap-10 text-xs mt-5">
+            <a
+              className="flex flex-col justify-center items-center w-15 text-center gap-2"
+              href="https://map.kakao.com/link/map/37.5064069,126.7538282"
+            >
+              <img className="w-10" src="/kakao_map.png" />
+              <div>카카오맵</div>
+            </a>
+
+            <a
+              className="flex flex-col justify-center items-center w-15 text-center gap-2"
+              href="https://map.naver.com/p/entry/place/12945535?c=15.00,0,0,0,dh"
             >
               <img className="w-10" src="/naver_map.png" />
               <div>네이버지도</div>
