@@ -8,6 +8,7 @@ export default function Document() {
           type="text/javascript"
           src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e51113201b492023f6d894be924b9270"
         ></script>
+        <title>진하♥지원 모바일 청첩장</title>
       </Head>
       <body>
         <Main />
