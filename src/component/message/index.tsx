@@ -2,8 +2,8 @@ import { breakPoints } from "@/common/mediaQuery/media";
 import { db } from "@/firebase";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
-import { addDoc, collection, getDocs } from "firebase/firestore";
-import { ChangeEvent, useEffect, useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import { ChangeEvent, useState } from "react";
 
 const DialogKeyframes = keyframes`
  from {
@@ -90,19 +90,7 @@ export default function MessageDialog(props: any) {
       console.log(error);
     }
   };
-  const getItems = async () => {
-    const query = await getDocs(collection(db, "message"));
-    console.log(
-      query.docs.map((el) => el._document.data.value.mapValue.fields)
-    );
-  };
-  useEffect(() => {
-    // console.log(db);
-    getItems();
 
-    // getDocs(데이터를 가져올 콜렉션)
-    // collection(db정보, 콜렉션 이름)
-  }, []);
   return (
     <MessageDialogBox ref={props.messageDialogRef}>
       <Close onClick={props.closeDialog}>X</Close>
