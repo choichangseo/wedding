@@ -48,7 +48,7 @@ const ImageDialog = styled.dialog`
   height: max-content;
   padding: 20px;
   border: none;
-
+  background: none;
   &[open] {
     animation: ${DialogKeyframes} 500ms forwards ease;
   }
@@ -57,16 +57,40 @@ const ImageDialog = styled.dialog`
     opacity: 0.6;
   }
 
-  .img {
-    width: 100%;
-  }
   @media ${breakPoints.mobile} {
     width: 100%;
   }
 `;
 
+const Close = styled.div`
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #ffffff;
+  cursor: pointer;
+`;
+
+const ImageBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+`;
+const DialogImage = styled.img`
+  width: 90%;
+`;
+
+const NavigationButton = styled.button`
+  color: #ffffff;
+  font-size: 30px;
+  @media ${breakPoints.mobile} {
+    font-size: 20px;
+  }
+`;
+
 const DialogComponent = (props: any) => {
-  console.log();
   const NextImage = () => {
     if (props.startImage === "8") {
       props.setStartImage("1");
@@ -83,9 +107,12 @@ const DialogComponent = (props: any) => {
   };
   return (
     <ImageDialog ref={props.dialogRef}>
-      <img src={`./image${props.startImage}.jpeg`} />
-      <button onClick={PrevImage}>&lt;</button>
-      <button onClick={NextImage}>&gt;</button>
+      <Close onClick={props.closeDialog}>X</Close>
+      <ImageBox>
+        <NavigationButton onClick={PrevImage}>&lt;</NavigationButton>
+        <DialogImage src={`./image${props.startImage}.jpeg`} />
+        <NavigationButton onClick={NextImage}>&gt;</NavigationButton>
+      </ImageBox>
     </ImageDialog>
   );
 };

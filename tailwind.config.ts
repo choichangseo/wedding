@@ -12,6 +12,8 @@ const config: Config = {
       ice: ["iceJaram-Rg"],
       Pretendard: ["Pretendard-Regular"],
       mono: ["ui-monospace", "SFMono-Regular"],
+      Nanum: ["NanumSquare"],
+      Gowun: ["GowunBatang-Regular"],
     },
     extend: {
       backgroundImage: {

@@ -20,24 +20,23 @@ body {
   padding: 0;
   margin: 0;
   width: 90%;
-  font-family: "Pretendard-Regular" "iceJaram-Rg";
-  background-color: #ffeceb;
+  font-family: "NanumSquare" "GowunBatang-Regular";
+  background-color: #ffffff;
   background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
   color: #000;
 }
 
 @font-face {
-  font-family: "iceJaram-Rg";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/iceJaram-Rg.woff2")
-    format("woff2");
+  font-family: "GowunBatang-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
-  font-weight: 400;
+  font-family: "NanumSquare";
+  src: url("/font/NanumSquare_acL.ttf") format("ttf");
+  font-weight: normal;
   font-style: normal;
 }
