@@ -20,6 +20,10 @@ const config: Config = {
         "0%": { opacity: "0" },
         "100%": { opacity: "1" },
       },
+      fadeout: {
+        "0%": { opacity: "1" },
+        "100%": { opacity: "0" },
+      },
     },
     extend: {
       backgroundImage: {
@@ -29,6 +33,7 @@ const config: Config = {
       },
       animation: {
         fadein: "fadein 2s ease-out",
+        fadeout: "fadeout 2s ease-out forwards",
       },
     },
     colors: {

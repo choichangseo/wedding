@@ -36,7 +36,9 @@ export default function Home() {
       <div
         ref={fadeInRef1}
         className={`flex flex-col text-center w-full transition-opacity ${
-          isVisible1 ? "opacity-100 animate-fadein" : "opacity-0"
+          isVisible1
+            ? "opacity-100 animate-fadein"
+            : "opacity-0 animate-fadeout"
         }`}
       >
         <h1 className="font-Gowun font-bold text-2xl mb-5">
@@ -49,7 +51,9 @@ export default function Home() {
       <div
         ref={fadeInRef2}
         className={`flex flex-col justify-center p-5 text-center w-full bg-my-yellow text-sm transition-opacity ${
-          isVisible2 ? "opacity-100 animate-fadein" : "opacity-0"
+          isVisible2
+            ? "opacity-100 animate-fadein"
+            : "opacity-0 animate-fadeout"
         }`}
       >
         <h1 className="font-Gowun font-bold text-2xl mb-5">INVITATION</h1>
@@ -63,7 +67,9 @@ export default function Home() {
       <div
         ref={fadeInRef3}
         className={`bg-my-yellow p-5 transition-opacity ${
-          isVisible3 ? "opacity-100 animate-fadein" : "opacity-0"
+          isVisible3
+            ? "opacity-100 animate-fadein"
+            : "opacity-0 animate-fadeout"
         }`}
       >
         <h1 className="font-Gowun font-bold text-2xl mb-5">GALLERY</h1>
@@ -72,7 +78,9 @@ export default function Home() {
       <div
         ref={fadeInRef4}
         className={`bg-my-yellow p-5 ${
-          isVisible4 ? "opacity-100 animate-fadein" : "opacity-0"
+          isVisible4
+            ? "opacity-100 animate-fadein"
+            : "opacity-0 animate-fadeout"
         }`}
       >
         <h1 className="font-Gowun font-bold text-2xl mb-5">LOCATION</h1>
@@ -81,7 +89,9 @@ export default function Home() {
       <div
         ref={fadeInRef5}
         className={`bg-my-yellow p-5 ${
-          isVisible5 ? "opacity-100 animate-fadein" : "opacity-0"
+          isVisible5
+            ? "opacity-100 animate-fadein"
+            : "opacity-0 animate-fadeout"
         }`}
       >
         <h1 className="font-Gowun font-bold text-2xl mb-5">라비에벨 컨벤션</h1>
@@ -141,7 +151,9 @@ export default function Home() {
       <div
         ref={fadeInRef6}
         className={`flex flex-col align-middle justify-center p-5  gap-2 text-center w-full bg-my-yellow ${
-          isVisible6 ? "opacity-100 animate-fadein" : "opacity-0"
+          isVisible6
+            ? "opacity-100 animate-fadein"
+            : "opacity-0 animate-fadeout"
         }`}
       >
         <h1 className="font-Gowun font-bold mb-8 text-2xl">마음 전하실 곳</h1>
@@ -155,7 +167,9 @@ export default function Home() {
       <div
         ref={fadeInRef7}
         className={`flex flex-col align-middle justify-center p-5  gap-2 text-center w-full bg-my-yellow ${
-          isVisible7 ? "opacity-100 animate-fadein" : "opacity-0"
+          isVisible7
+            ? "opacity-100 animate-fadein"
+            : "opacity-0 animate-fadeout"
         }`}
       >
         <h1 className="font-Gowun font-bold mb-8 text-2xl">
