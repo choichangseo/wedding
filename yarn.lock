@@ -1628,6 +1628,11 @@ react-image-gallery@^1.3.0:
   resolved "https://registry.yarnpkg.com/react-image-gallery/-/react-image-gallery-1.3.0.tgz#789035b12d8149bdd2ab296c155f989205077ffb"
   integrity sha512-lKnPaOzxqSdujPFyl+CkVw0j1aYoNCHk61cvr1h7aahf5aWqmPcR9YhUB4cYrt5Tn5KHDaPUzYm5/+cX9WxzaA==
 
+react-intersection-observer@^9.10.1:
+  version "9.10.1"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-9.10.1.tgz#24a112de42b55b2ca4a2575781fe2d6ecd73178f"
+  integrity sha512-ZseerLEOaZ2FFMtkjNd0RGzxKTiiIBGaXcR5buh3GSgtoInNCztHvCzgu5Gg2I2vUhF/EX1XJn95inZkp/K6xQ==
+
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"

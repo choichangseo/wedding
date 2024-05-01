@@ -37,6 +37,9 @@ const Close = styled.div`
   justify-content: flex-end;
   font-size: 20px;
   cursor: pointer;
+  :focus {
+    outline: none;
+  }
 `;
 
 const Content = styled.div`
@@ -49,6 +52,9 @@ const NameInput = styled.input`
   border: 1px solid #000;
   padding: 5px;
   border-radius: 5px;
+  :focus {
+    outline: none;
+  }
   ::placeholder {
     font-size: 14px;
   }
@@ -59,6 +65,9 @@ const TextArea = styled.textarea`
   border-radius: 5px;
   height: 300px;
   resize: none;
+  :focus {
+    outline: none;
+  }
   ::placeholder {
     font-size: 14px;
   }
@@ -68,6 +77,9 @@ const Button = styled.button`
   border: none;
   padding: 8px;
   background-color: #f5eee0;
+  :focus {
+    outline: none;
+  }
 `;
 export default function MessageDialog(props: any) {
   const [name, setName] = useState("");
@@ -93,10 +105,13 @@ export default function MessageDialog(props: any) {
 
   return (
     <MessageDialogBox ref={props.messageDialogRef}>
-      <Close onClick={props.closeDialog}>X</Close>
+      <Close autoFocus={false} onClick={props.closeDialog}>
+        X
+      </Close>
       <Content>
         <div>이름</div>
         <NameInput
+          autoFocus={false}
           placeholder="성함을 입력해주세요."
           type="text"
           onChange={onChangeName}
@@ -105,6 +120,7 @@ export default function MessageDialog(props: any) {
       <Content>
         <div>내용</div>
         <TextArea
+          autoFocus={false}
           placeholder="내용을 입력해주세요."
           onChange={onChangeContent}
         />

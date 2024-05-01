@@ -3,6 +3,7 @@ import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { MouseEvent, useRef, useState } from "react";
 import LazyLoad from "react-lazy-load";
+
 const DialogKeyframes = keyframes`
  from {
     opacity: 0;
@@ -57,6 +58,10 @@ const ImageDialog = styled.dialog`
     opacity: 0.6;
   }
 
+  :focus {
+    outline: none;
+  }
+
   @media ${breakPoints.mobile} {
     width: 100%;
   }
@@ -69,6 +74,9 @@ const Close = styled.div`
   font-size: 30px;
   color: #ffffff;
   cursor: pointer;
+  :focus {
+    outline: none;
+  }
 `;
 
 const ImageBox = styled.div`
@@ -85,6 +93,9 @@ const DialogImage = styled.img`
 const NavigationButton = styled.button`
   color: #ffffff;
   font-size: 30px;
+  :focus {
+    outline: none;
+  }
   @media ${breakPoints.mobile} {
     font-size: 20px;
   }
