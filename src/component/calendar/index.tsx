@@ -114,7 +114,6 @@ export default function Calendar() {
   const diffTime = +targetDate - +today;
   const dDay = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-  console.log(`오늘부터 6월 29일까지 D-Day는 ${dDay}일 남았습니다.`);
   return (
     <CalendarBox>
       <WeekBox>

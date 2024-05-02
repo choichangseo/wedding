@@ -1,4 +1,3 @@
-// import Device from "./component/isMobile/Device";
 import useFadeIn from "@/common/useFadein";
 import ImageSlider from "@/component/imageSlider";
 import KaKaoMap from "@/component/kakaoMap";
@@ -6,6 +5,7 @@ import MessageDialog from "@/component/message";
 import { MouseEvent, useEffect, useRef, useState } from "react";
 import { isMobile } from "react-device-detect";
 import Calendar from "../component/calendar/index";
+import Snowfall from "react-snowfall";
 
 export default function Home() {
   const { ref: fadeInRef1, isVisible: isVisible1 } = useFadeIn();
@@ -15,6 +15,10 @@ export default function Home() {
   const { ref: fadeInRef5, isVisible: isVisible5 } = useFadeIn();
   const { ref: fadeInRef6, isVisible: isVisible6 } = useFadeIn();
   const { ref: fadeInRef7, isVisible: isVisible7 } = useFadeIn();
+
+  const [snowflakeImage, setSnowflakeImage] = useState<HTMLImageElement | null>(
+   null
+ );
 
   const [mounted, setMounted] = useState<boolean>(false);
   const messageDialogRef = useRef<HTMLDialogElement>(null);
@@ -29,9 +33,27 @@ export default function Home() {
   };
   useEffect(() => {
     setMounted(true);
+    // 이미지 생성
+    const img = new Image();
+    img.src = "/flower.png";
+    setSnowflakeImage(img);
   }, []);
+
   return (
     <main className="flex flex-col w-full gap-10">
+      {snowflakeImage && (
+        <Snowfall
+          snowflakeCount={100}
+          speed={[0.5, 1.5]}
+          radius={[6, 6]}
+          style={{
+            position: "fixed",
+            width: "100vw",
+            height: "100vh",
+          }}
+          images={[snowflakeImage]}
+        />
+      )}
       <img src="/wedding1.jpeg" />
       <div
         ref={fadeInRef1}
