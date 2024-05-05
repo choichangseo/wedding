@@ -2,6 +2,8 @@ import { breakPoints } from "@/common/mediaQuery/media";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { MouseEvent, useRef, useState } from "react";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { IoIosCloseCircle } from "react-icons/io";
 import LazyLoad from "react-lazy-load";
 
 const DialogKeyframes = keyframes`
@@ -45,9 +47,8 @@ const Image = styled.img`
   animation: ${ImageKeyframes} 0.5s ease; /* 0.5초 동안 부드럽게 원래 크기로 변환 */
 `;
 const ImageDialog = styled.dialog`
-  width: 50%;
+  width: 100%;
   height: max-content;
-  padding: 20px;
   border: none;
   background: none;
   &[open] {
@@ -67,18 +68,6 @@ const ImageDialog = styled.dialog`
   }
 `;
 
-const Close = styled.div`
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
-  color: #ffffff;
-  cursor: pointer;
-  :focus {
-    outline: none;
-  }
-`;
-
 const ImageBox = styled.div`
   width: 100%;
   display: flex;
@@ -87,23 +76,27 @@ const ImageBox = styled.div`
   gap: 5px;
 `;
 const DialogImage = styled.img`
-  width: 90%;
+  width: 100%;
 `;
 
-const NavigationButton = styled.button`
-  color: #ffffff;
-  font-size: 30px;
-  :focus {
-    outline: none;
+const Navigation = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+  svg {
+    font-size: 30px;
   }
-  @media ${breakPoints.mobile} {
-    font-size: 20px;
+  svg:nth-child(3) {
+    font-size: 33px;
   }
 `;
 
 const DialogComponent = (props: any) => {
   const NextImage = () => {
-    if (props.startImage === "8") {
+    if (props.startImage === "28") {
       props.setStartImage("1");
     } else {
       props.setStartImage((prev: String) => String(Number(prev) + 1));
@@ -111,19 +104,21 @@ const DialogComponent = (props: any) => {
   };
   const PrevImage = () => {
     if (props.startImage === "1") {
-      props.setStartImage("8");
+      props.setStartImage("28");
     } else {
       props.setStartImage((prev: String) => String(Number(prev) - 1));
     }
   };
   return (
     <ImageDialog ref={props.dialogRef}>
-      <Close onClick={props.closeDialog}>X</Close>
       <ImageBox>
-        <NavigationButton onClick={PrevImage}>&lt;</NavigationButton>
         <DialogImage src={`./image${props.startImage}.jpeg`} />
-        <NavigationButton onClick={NextImage}>&gt;</NavigationButton>
       </ImageBox>
+      <Navigation style={{ display: "flex" }}>
+        <FaArrowAltCircleRight onClick={PrevImage} />
+        <FaArrowAltCircleLeft onClick={NextImage} />
+        <IoIosCloseCircle onClick={props.closeDialog} />
+      </Navigation>
     </ImageDialog>
   );
 };
@@ -142,60 +137,60 @@ export default function ImageSlider() {
     dialogRef.current.close();
   };
 
+  const firstImageId = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+  ];
+  const secondImageId = [
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+  ];
   return (
     <LazyLoad>
       <ImageList>
         <Images>
-          <Image
-            onClick={openDialog}
-            id="1"
-            src="./image1.jpeg"
-            loading="lazy"
-          />
-          <Image
-            onClick={openDialog}
-            id="2"
-            src="./image2.jpeg"
-            loading="lazy"
-          />
-          <Image
-            onClick={openDialog}
-            id="3"
-            src="./image3.jpeg"
-            loading="lazy"
-          />
-          <Image
-            onClick={openDialog}
-            id="4"
-            src="./image4.jpeg"
-            loading="lazy"
-          />
+          {firstImageId.map((el) => (
+            <Image
+              onClick={openDialog}
+              id={el}
+              src={`./image${el}.jpeg`}
+              loading="lazy"
+            />
+          ))}
         </Images>
         <Images>
-          <Image
-            onClick={openDialog}
-            id="5"
-            src="./image5.jpeg"
-            loading="lazy"
-          />
-          <Image
-            onClick={openDialog}
-            id="6"
-            src="./image6.jpeg"
-            loading="lazy"
-          />
-          <Image
-            onClick={openDialog}
-            id="7"
-            src="./image7.jpeg"
-            loading="lazy"
-          />
-          <Image
-            onClick={openDialog}
-            id="8"
-            src="./image8.jpeg"
-            loading="lazy"
-          />
+          {secondImageId.map((el) => (
+            <Image
+              onClick={openDialog}
+              id={el}
+              src={`./image${el}.jpeg`}
+              loading="lazy"
+            />
+          ))}
         </Images>
         <DialogComponent
           dialogRef={dialogRef}
