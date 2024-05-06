@@ -10,6 +10,7 @@ export default function Document() {
         ></script>
         <title>진하♥지원 모바일 청첩장</title>
         <meta property="og:title" content="진하♥지원 모바일 청첩장" />
+        <meta property="og:image" content="/og.jpeg"></meta>
         <meta
           name="description"
           content="저희 결혼합니다. 부디 오셔서 축하해주세요."
