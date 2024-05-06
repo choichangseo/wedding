@@ -68,7 +68,7 @@ export default function Home() {
           images={[snowflakeImage]}
         />
       )}
-      <img src="/main.jpeg" />
+      <img src="/main.webp" />
       <div
         ref={fadeInRef1}
         className={`flex flex-col text-center w-full transition-opacity ${

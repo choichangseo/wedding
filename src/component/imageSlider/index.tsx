@@ -112,7 +112,7 @@ const DialogComponent = (props: any) => {
   return (
     <ImageDialog ref={props.dialogRef}>
       <ImageBox>
-        <DialogImage src={`./image${props.startImage}.jpeg`} />
+        <DialogImage src={`/image${props.startImage}.webp`} />
       </ImageBox>
       <Navigation style={{ display: "flex" }}>
         <FaArrowAltCircleRight onClick={PrevImage} />
@@ -177,7 +177,7 @@ export default function ImageSlider() {
             <Image
               onClick={openDialog}
               id={el}
-              src={`./image${el}.jpeg`}
+              src={`/image${el}.webp`}
               loading="lazy"
             />
           ))}
@@ -187,7 +187,7 @@ export default function ImageSlider() {
             <Image
               onClick={openDialog}
               id={el}
-              src={`./image${el}.jpeg`}
+              src={`/image${el}.webp`}
               loading="lazy"
             />
           ))}
