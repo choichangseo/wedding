@@ -8,6 +8,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { isMobile } from "react-device-detect";
 import { FaRegCopy } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
+import { MdOutlinePlayCircleOutline } from "react-icons/md";
 import Snowfall from "react-snowfall";
 import Calendar from "../component/calendar/index";
 
@@ -20,6 +21,7 @@ export default function Home() {
   const { ref: fadeInRef6, isVisible: isVisible6 } = useFadeIn();
   const { ref: fadeInRef7, isVisible: isVisible7 } = useFadeIn();
   const { ref: fadeInRef8, isVisible: isVisible8 } = useFadeIn();
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [brideAccountActive, setBrideAccountActive] = useState<boolean>(false);
   const [groomAccountActive, setGroomAccountActive] = useState<boolean>(false);
   const [snowflakeImage, setSnowflakeImage] = useState<HTMLImageElement | null>(
@@ -46,15 +48,25 @@ export default function Home() {
     setGroomAccountActive((prev) => !prev);
   };
 
+  const onClickAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
+
   useEffect(() => {
     setMounted(true);
     const img = new Image();
     img.src = "/flower.png";
+
     setSnowflakeImage(img);
   }, []);
 
   return (
     <main className="flex flex-col w-full gap-10 mb-5">
+      <audio ref={audioRef} loop autoPlay>
+        <source src="/bg1.mp3" type="audio/mp3" />
+      </audio>
       {snowflakeImage && (
         <Snowfall
           snowflakeCount={100}
@@ -69,6 +81,9 @@ export default function Home() {
         />
       )}
       <img src="/main.webp" />
+      <div className="w-full flex justify-center text-2xl cursor-pointer">
+        <MdOutlinePlayCircleOutline onClick={onClickAudio} />
+      </div>
       <div
         ref={fadeInRef1}
         className={`flex flex-col text-center w-full transition-opacity ${
