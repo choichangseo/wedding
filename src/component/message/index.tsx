@@ -63,7 +63,7 @@ const TextArea = styled.textarea`
   border: 1px solid #000;
   padding: 5px;
   border-radius: 5px;
-  height: 300px;
+  height: 200px;
   resize: none;
   :focus {
     outline: none;
@@ -90,11 +90,28 @@ export default function MessageDialog(props: any) {
   const onChangeContent = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setContent(e.target.value);
   };
+
+  const formatDate = (date: any) => {
+    let d = new Date(date),
+      month = "" + (d.getMonth() + 1), // getMonth()는 0부터 시작하므로 1을 더해야 합니다.
+      day = "" + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+
+    return [year, month, day].join("-"); // yyyy-mm-dd 형식으로 조합합니다.
+  };
   const onClickSendMessage = async () => {
+    if (!name || !content) {
+      return alert("축하메세지 내용을 채워주세요~!");
+    }
     try {
       await addDoc(collection(db, `message`), {
         name,
         content: JSON.stringify(content),
+        regDate: formatDate(new Date()),
+        createdAt: new Date(), // Firestore 타임스탬프
       });
       alert("신랑 신부에게 축하메세지를 전해주셔서 감사합니다.");
       props.closeDialog();
@@ -120,8 +137,9 @@ export default function MessageDialog(props: any) {
       <Content>
         <div>내용</div>
         <TextArea
+          maxLength={100}
           autoFocus={false}
-          placeholder="내용을 입력해주세요."
+          placeholder="100자 이내로 입력해주세요."
           onChange={onChangeContent}
         />
       </Content>

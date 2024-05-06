@@ -29,7 +29,7 @@ const ImageKeyframes = keyframes`
 const ImageList = styled.div`
   display: grid;
   overflow-y: scroll;
-  height: 500px;
+  height: 600px;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 10px;
   transition: 2s ease-in-out;

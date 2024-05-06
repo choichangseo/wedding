@@ -24,6 +24,10 @@ const config: Config = {
         "0%": { opacity: "1" },
         "100%": { opacity: "0" },
       },
+      slideDown: {
+        "0%": { opacity: "0", height: "0px" },
+        "100%": { opacity: "1", height: "60px" },
+      },
     },
     extend: {
       backgroundImage: {
@@ -34,6 +38,12 @@ const config: Config = {
       animation: {
         fadein: "fadein 2s ease-out",
         fadeout: "fadeout 2s ease-out forwards",
+        "slide-down": "slideDown 0.5s ease-out forwards",
+      },
+      animationDelay: {
+        "delay-100": "100ms",
+        "delay-200": "200ms",
+        "delay-300": "300ms",
       },
     },
     colors: {
