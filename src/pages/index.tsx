@@ -8,11 +8,15 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { isMobile } from "react-device-detect";
 import { FaRegCopy } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
-import { MdOutlinePlayCircleOutline } from "react-icons/md";
+import {
+  MdOutlinePlayCircleOutline,
+  MdOutlinePlayDisabled,
+} from "react-icons/md";
 import Snowfall from "react-snowfall";
 import Calendar from "../component/calendar/index";
 
 export default function Home() {
+  const [play,setPlay] = useState(false);
   const { ref: fadeInRef1, isVisible: isVisible1 } = useFadeIn();
   const { ref: fadeInRef2, isVisible: isVisible2 } = useFadeIn();
   const { ref: fadeInRef3, isVisible: isVisible3 } = useFadeIn();
@@ -49,8 +53,13 @@ export default function Home() {
   };
 
   const onClickAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.play();
+    if (play === false) {
+      audioRef.current!.play();
+      setPlay(true);
+    }
+    if(play === true) {
+      audioRef.current!.pause();
+      setPlay(false);
     }
   };
 
@@ -82,7 +91,7 @@ export default function Home() {
       )}
       <img src="/main.webp" />
       <div className="w-full flex justify-center text-2xl cursor-pointer">
-        <MdOutlinePlayCircleOutline onClick={onClickAudio} />
+        {play ?<MdOutlinePlayDisabled onClick={onClickAudio} /> :  <MdOutlinePlayCircleOutline onClick={onClickAudio} />}
       </div>
       <div
         ref={fadeInRef1}
