@@ -16,7 +16,7 @@ import Snowfall from "react-snowfall";
 import Calendar from "../component/calendar/index";
 
 export default function Home() {
-  const [play,setPlay] = useState(false);
+  const [play,setPlay] = useState(true);
   const { ref: fadeInRef1, isVisible: isVisible1 } = useFadeIn();
   const { ref: fadeInRef2, isVisible: isVisible2 } = useFadeIn();
   const { ref: fadeInRef3, isVisible: isVisible3 } = useFadeIn();
