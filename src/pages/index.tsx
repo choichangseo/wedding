@@ -202,7 +202,7 @@ export default function Home() {
             </a>
             <a
               className="flex flex-col justify-center items-center w-15 text-center gap-2"
-              href="tmap://search?name=라비에벨 웨딩"
+              href="tmap://search?name=라비에벨웨딩"
             >
               <img className="w-10" src="/t_map.png" />
               <div>T-MAP</div>
