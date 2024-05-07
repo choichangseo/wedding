@@ -194,7 +194,7 @@ export default function Home() {
             <a
               className="flex flex-col justify-center items-center w-15 text-center gap-2"
               href={`nmap://search?query=${encodeURIComponent(
-                "라비에벨 컨벤션"
+                "라비에벨웨딩"
               )}&appname=https://wedding-snowy-chi.vercel.app/`}
             >
               <img className="w-10" src="/naver_map.png" />
