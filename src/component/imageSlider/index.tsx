@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import { MouseEvent, useRef, useState } from "react";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
-import LazyLoad from "react-lazy-load";
 
 const DialogKeyframes = keyframes`
  from {
@@ -170,7 +169,6 @@ export default function ImageSlider() {
     "28",
   ];
   return (
-    <LazyLoad>
       <ImageList>
         <Images>
           {firstImageId.map((el) => (
@@ -178,7 +176,6 @@ export default function ImageSlider() {
               onClick={openDialog}
               id={el}
               src={`/image${el}.webp`}
-              loading="lazy"
             />
           ))}
         </Images>
@@ -188,7 +185,6 @@ export default function ImageSlider() {
               onClick={openDialog}
               id={el}
               src={`/image${el}.webp`}
-              loading="lazy"
             />
           ))}
         </Images>
@@ -199,6 +195,5 @@ export default function ImageSlider() {
           setStartImage={setStartImage}
         />
       </ImageList>
-    </LazyLoad>
   );
 }
