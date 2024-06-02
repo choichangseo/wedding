@@ -145,7 +145,7 @@ export default function Calendar() {
       <DdayBox>
         진하
         <DdayImage src="/dDayHeart.png" />
-        지원 <span>{dDay}일 후에 뵙겠습니다.</span>
+        지원 <span>{dDay <= 0 ? "today" : `${dDay} 일 후에 뵙겠습니다.`}</span>
       </DdayBox>
     </CalendarBox>
   );
