@@ -134,7 +134,7 @@ export default function Home() {
       >
         <div>
           <h1 className="font-Gowun font-bold text-2xl mb-3">2024. 06. 29</h1>
-          <h1 className="font-Gowun font-bold text-l m-0">토요일 오후 5시</h1>
+          <h1 className="font-Gowun font-bold text-l m-0">토요일 오후 5시 30분</h1>
         </div>
         <Calendar />
       </div>
