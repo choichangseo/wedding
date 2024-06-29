@@ -106,7 +106,7 @@ export default function Home() {
           결혼식에 초대합니다
         </h1>
         장진하 & 김지원
-        <div>2024. 06. 29 토요일 오후 5시</div>
+        <div>2024. 06. 29 토요일 오후 5시 30분</div>
         <div>라비에벨 9층 웨딩홀</div>
       </div>
       <div
